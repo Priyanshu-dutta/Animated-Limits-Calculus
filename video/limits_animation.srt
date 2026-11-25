@@ -1,0 +1,147 @@
+1
+00:00:01,200 --> 00:00:07,614
+The Mystery of Limits: Getting Closer to a Point
+
+2
+00:00:08,364 --> 00:00:14,010
+What happens when we approach a point where the function doesn't even exist?
+
+3
+00:00:14,760 --> 00:00:20,646
+Consider f(x) = (x² - 4) / (x - 2).
+
+4
+00:00:21,196 --> 00:00:28,162
+When x = 1.5, f(1.5) = 3.5
+
+5
+00:00:28,462 --> 00:00:32,860
+When x = 1.9, f(1.9) = 3.9
+
+6
+00:00:33,160 --> 00:00:37,630
+When x = 1.99, f(1.99) = 3.99
+
+7
+00:00:38,030 --> 00:00:44,228
+At x = 2, the denominator is zero — f(2) is UNDEFINED!
+
+8
+00:00:44,878 --> 00:00:52,372
+If the function is undefined at x = 2, how can we predict what value it is approaching?
+
+9
+00:00:53,322 --> 00:01:00,888
+Notation: lim (x → a) f(x) = L
+
+10
+00:01:01,438 --> 00:01:10,012
+x = input, a = target value approached, L = value f(x) approaches
+
+11
+00:01:10,562 --> 00:01:22,832
+Approaching 2 from the left: 1.5 → 1.8 → 1.9 → 1.99 → 1.999
+
+12
+00:01:23,282 --> 00:01:33,608
+Approaching 2 from the right: 2.5 → 2.2 → 2.1 → 2.01 → 2.001
+
+13
+00:01:34,158 --> 00:01:39,564
+Both points move closer to 2 without needing to land on 2.
+
+14
+00:01:40,014 --> 00:01:48,900
+A limit asks what happens as we get closer and closer to a point.
+
+15
+00:01:49,850 --> 00:01:55,688
+Plotting the line y = x + 2 on the coordinate plane.
+
+16
+00:01:56,238 --> 00:02:02,148
+On y = x + 2, x = 2 corresponds to the point (2, 4).
+
+17
+00:02:02,598 --> 00:02:18,156
+f(x) = (x² - 4)/(x - 2) matches y = x + 2 everywhere except a hole at (2, 4).
+
+18
+00:02:18,806 --> 00:02:26,132
+Moving along the curve from the left → y approaches 4.
+
+19
+00:02:26,582 --> 00:02:32,828
+Moving along the curve from the right → y approaches 4.
+
+20
+00:02:33,278 --> 00:02:43,412
+From the left → 4, from the right → 4. Both sides agree, so the limit is 4!
+
+21
+00:02:44,362 --> 00:02:52,768
+Evaluate: lim (x → 2) (x² - 4) / (x - 2)
+
+22
+00:02:53,218 --> 00:03:03,088
+Step 1: Direct substitution gives (2² - 4)/(2 - 2) = 0/0.
+
+23
+00:03:03,638 --> 00:03:13,316
+0/0 is an Indeterminate Form — it means we need to simplify.
+
+24
+00:03:13,966 --> 00:03:23,860
+Step 2: Factor numerator: x² - 4 = (x - 2)(x + 2)
+
+25
+00:03:24,510 --> 00:03:33,372
+Step 3: Rewrite as [(x - 2)(x + 2)] / (x - 2)
+
+26
+00:03:33,922 --> 00:03:50,488
+Step 4: Cancel (x - 2) → f(x) = x + 2, for x ≠ 2
+
+27
+00:03:51,138 --> 00:04:02,544
+Step 5: lim (x → 2) (x + 2) = 2 + 2 = 4
+
+28
+00:04:03,494 --> 00:04:09,668
+Connecting algebra back to the graph using one-sided limits.
+
+29
+00:04:10,118 --> 00:04:16,772
+Left-hand limit: lim (x → 2⁻) f(x) = 4
+
+30
+00:04:17,322 --> 00:04:24,360
+Right-hand limit: lim (x → 2⁺) f(x) = 4
+
+31
+00:04:24,910 --> 00:04:31,372
+Left-hand limit = Right-hand limit = 4 ⇒ lim (x → 2) f(x) = 4
+
+32
+00:04:32,022 --> 00:04:47,460
+Limit at x = 2 is 4, even though f(2) is Undefined!
+
+33
+00:04:48,410 --> 00:04:55,568
+1. A limit describes what value a function approaches.
+
+34
+00:04:55,968 --> 00:05:01,230
+2. Left-hand and right-hand limits must agree for the limit to exist.
+
+35
+00:05:01,630 --> 00:05:07,324
+3. A limit can exist even when the function is undefined at that point.
+
+36
+00:05:07,924 --> 00:05:18,274
+In mathematics, sometimes what matters isn't where you are, but where you're heading.
+
+37
+00:05:19,024 --> 00:05:23,974
+M3 Animation Project • Limits and Continuity • Credits & References
