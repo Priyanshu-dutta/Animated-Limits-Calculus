@@ -656,8 +656,15 @@
   }
 
   function updateSubtitle(t) {
+    const wrap = document.getElementById("subtitle-wrap");
     const pill = document.getElementById("subtitle-pill");
     if (!timeline || !pill) return;
+    if (timeline.show_subtitles === false) {
+      if (wrap) wrap.style.display = "none";
+      pill.style.opacity = "0";
+      return;
+    }
+    if (wrap) wrap.style.display = "flex";
     let active = null;
     for (const b of timeline.beats) {
       if (t >= b.start && t <= b.speak_end + 0.2) {

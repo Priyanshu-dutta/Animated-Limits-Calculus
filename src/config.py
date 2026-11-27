@@ -15,8 +15,8 @@ VIDEO_DIR = PROJECT_ROOT / "video"
 DOCS_DIR = PROJECT_ROOT / "documents"
 
 # Student / Course Metadata (shown in Opening & Closing frames)
-STUDENT_NAME = "[YOUR NAME]"
-STUDENT_ID = "[YOUR STUDENT ID]"
+STUDENT_NAME = "Priyanshu Dutta"
+STUDENT_ID = "E25B070654"
 COURSE_NAME = "Linear Algebra and Calculus (M3)"
 PROJECT_LABEL = "M3 Internal Assessment • Animation Video"
 VIDEO_TITLE = "The Mystery of Limits: Getting Closer to a Point"
@@ -28,7 +28,9 @@ HEIGHT = 1080
 FPS = 30
 RENDER_WORKERS = 4  # Parallel Chrome instances for deterministic frame capture
 
-# Audio & Narration settings
+# Audio & Subtitles settings
+ENABLE_AUDIO = False   # Set False for a silent MP4 ready for manual voice-over recording
+SHOW_SUBTITLES = False  # Set False to hide on-screen captions and omit SRT output
 TTS_VOICE = "en-US-AndrewNeural"
 TTS_RATE = "-3%"  # Slightly measured pace for clear educational delivery
 MUSIC_VOLUME = 0.065  # Subtle ambient background pad (~ -24 dB under voice)

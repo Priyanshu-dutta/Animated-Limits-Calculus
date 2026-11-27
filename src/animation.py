@@ -18,10 +18,14 @@ from playwright.sync_api import sync_playwright
 from config import (
     BUILD_DIR,
     CHROME_EXECUTABLE,
+    ENABLE_AUDIO,
     FPS,
     HEIGHT,
     RENDER_WORKERS,
+    SHOW_SUBTITLES,
     SRC_DIR,
+    STUDENT_ID,
+    STUDENT_NAME,
     VIDEO_DIR,
     WIDTH,
 )
@@ -172,28 +176,47 @@ def render_full_video(timeline: dict) -> Path:
 
     audio_mix = BUILD_DIR / "audio_mix.m4a"
     final_mp4 = VIDEO_DIR / "limits_animation.mp4"
-    subprocess.run(
-        [
-            ffmpeg_exe,
-            "-y",
-            "-loglevel",
-            "error",
-            "-i",
-            str(video_only),
-            "-i",
-            str(audio_mix),
-            "-c:v",
-            "copy",
-            "-c:a",
-            "copy",
-            "-movflags",
-            "+faststart",
-            "-shortest",
-            str(final_mp4),
-        ],
-        check=True,
-    )
-    print(f"Final MP4 rendered successfully: {final_mp4}")
+    if ENABLE_AUDIO and audio_mix.exists():
+        subprocess.run(
+            [
+                ffmpeg_exe,
+                "-y",
+                "-loglevel",
+                "error",
+                "-i",
+                str(video_only),
+                "-i",
+                str(audio_mix),
+                "-c:v",
+                "copy",
+                "-c:a",
+                "copy",
+                "-movflags",
+                "+faststart",
+                "-shortest",
+                str(final_mp4),
+            ],
+            check=True,
+        )
+    else:
+        subprocess.run(
+            [
+                ffmpeg_exe,
+                "-y",
+                "-loglevel",
+                "error",
+                "-i",
+                str(video_only),
+                "-c:v",
+                "copy",
+                "-an",
+                "-movflags",
+                "+faststart",
+                str(final_mp4),
+            ],
+            check=True,
+        )
+    print(f"Final MP4 rendered successfully: {final_mp4} (audio={ENABLE_AUDIO}, subtitles={SHOW_SUBTITLES})")
     return final_mp4
 
 
@@ -206,10 +229,18 @@ def main() -> None:
     timeline_path = BUILD_DIR / "timeline.json"
     audio_path = BUILD_DIR / "audio_mix.m4a"
 
-    if args.skip_audio and timeline_path.exists() and audio_path.exists():
+    if args.skip_audio and timeline_path.exists():
         timeline = json.loads(timeline_path.read_text(encoding="utf-8"))
     else:
         timeline = build_audio_and_timeline()
+
+    timeline["student_name"] = STUDENT_NAME
+    timeline["student_id"] = STUDENT_ID
+    timeline["show_subtitles"] = SHOW_SUBTITLES
+    timeline_path.write_text(json.dumps(timeline, indent=2), encoding="utf-8")
+    if not SHOW_SUBTITLES:
+        srt_path = VIDEO_DIR / "limits_animation.srt"
+        srt_path.unlink(missing_ok=True)
 
     if args.preview:
         render_previews(timeline)

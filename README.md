@@ -10,9 +10,8 @@ $$f(x) = \frac{x^2 - 4}{x - 2}, \qquad \lim_{x \to 2} \frac{x^2 - 4}{x - 2} = 4$
 
 ## Project Specifications
 - **Duration:** ~5 minutes 27 seconds (strictly under the 7-minute limit)
-- **Resolution & Format:** 1920×1080 (16:9 landscape), 30 fps, H.264 MP4 with AAC audio
-- **Audio:** Clear English neural voice-over (`edge-tts` — `en-US-AndrewNeural`) + subtle original procedural ambient pad (`NumPy`)
-- **Subtitles:** Synchronized bottom captions rendered cleanly on-screen + standalone `video/limits_animation.srt`
+- **Resolution & Format:** 1920×1080 (16:9 landscape), 30 fps, H.264 MP4 (silent visual track ready for presenter voice-over; optional AI TTS + subtitles toggleable in `src/config.py`)
+- **Narration Script:** Full timestamped script in `documents/narration_script.md` aligned to every visual cue
 - **Visual Stack:** Deterministic HTML5 Canvas 2D + local KaTeX typesetting rendered frame-by-frame in headless Chrome (`Playwright`) and encoded via `FFmpeg` (`imageio-ffmpeg`)
 
 ---

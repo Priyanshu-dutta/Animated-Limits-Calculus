@@ -88,10 +88,12 @@ STORYBOARD_HTML = """<!DOCTYPE html>
   </div>
 
   <div class="meta-grid">
+    <div><strong>Created by:</strong> Priyanshu Dutta</div>
+    <div><strong>Student ID:</strong> E25B070654</div>
     <div><strong>Topic:</strong> Limits and Continuity</div>
     <div><strong>Duration:</strong> ~5 min 27 sec (max 7 min)</div>
     <div><strong>Main Function:</strong> f(x) = (x² − 4) / (x − 2) as x → 2</div>
-    <div><strong>Format:</strong> 1920×1080 (16:9), 30 fps MP4 + Voice-Over</div>
+    <div><strong>Format:</strong> 1920×1080 (16:9), 30 fps MP4</div>
   </div>
 
   <div class="objective">
