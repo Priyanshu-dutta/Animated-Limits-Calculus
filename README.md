@@ -89,6 +89,6 @@ The rendered video will be written to:
 
 ## Credits & AI Disclosure
 - **Mathematical References:** James Stewart, *Calculus*; OpenStax, *Calculus Volume 1*; visual pedagogy inspired by 3Blue1Brown.
-- **Audio & Music:** English narration generated with Microsoft Edge Neural TTS (`en-US-AndrewNeural`); subtle background chord pad synthesized procedurally using Python (`NumPy`).
-- **AI Assistance Disclosure:** AI coding and scripting assistance was used to structure the storyboard, author the Python/HTML5 animation pipeline, and synthesize the voice-over track. All mathematical derivations and visual choices were reviewed for correctness.
+- **Audio & Narration:** Original voice-over narration recorded personally by the presenter (**Priyanshu Dutta**, Student ID: `E25B070654`); no AI-generated voice or background music track is used in the final submitted video.
+- **AI Assistance Disclosure:** AI coding and scripting assistance was used to structure the storyboard and author the Python/HTML5 animation pipeline. All mathematical derivations, visual choices, and the final recorded narration are the presenter's own work.
 
